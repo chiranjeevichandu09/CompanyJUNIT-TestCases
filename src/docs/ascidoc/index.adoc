@@ -1,0 +1,84 @@
+= Getting Started With Spring REST Docs
+
+This is an example output for a service running at http://localhost:8080:
+
+
+== Post Api save company details
+
+.request
+include::{snippets}/saveCompanyTest/http-request.adoc[]
+
+.response
+include::{snippets}/saveCompanyTest/http-response.adoc[]
+
+
+== Get Api to Get company Details by CompanyName
+
+.request
+include::{snippets}/getByCompanyNameTest/http-request.adoc[]
+
+.response
+include::{snippets}/getByCompanyNameTest/http-request.adoc[]
+
+== Get Api to Get Company by companyLocation
+
+.request
+include::{snippets}/getByCompanyLocation/http-request.adoc[]
+
+.response
+include::{snippets}/getByCompanyLocation/http-response.adoc[]
+
+== Get Api Get By companyLocation and companyPurposeTest
+
+.request
+include::{snippets}/getByCompanyLocationAndCompanyPurposeTest/http-request.adoc[]
+
+.response
+include::{snippets}/getByCompanyLocationAndCompanyPurposeTest/http-response.adoc[]
+
+
+== Bad Request - Invalid Input
+
+If the request contains invalid input (e.g., missing required fields, invalid data formats), the API returns a 400 Bad Request status.
+
+.request Body
+include::{snippets}/save-company-invalid-input/http-request.adoc[]
+
+.response Body
+include::{snippets}/save-company-invalid-input/http-response.adoc[]
+
+.response Fields
+include::{snippets}/save-company-invalid-input/response-fields.adoc[]
+
+
+== Invalid Request input No Data Found
+.request Body
+include::{snippets}/get-By-company-Name-Invalid/http-request.adoc[]
+
+.response Body
+include::{snippets}/get-By-company-Name-Invalid/http-response.adoc[]
+
+.response Fields
+include::{snippets}/get-By-company-Name-Invalid/response-fields.adoc[]
+
+== Invalid company Location No data found
+
+.request body
+include::{snippets}/getByCompanyLocation_Invalid_Input/http-request.adoc[]
+
+.response body
+include::{snippets}/getByCompanyLocation_Invalid_Input/http-response.adoc[]
+
+.response Fields
+include::{snippets}/getByCompanyLocation_Invalid_Input/response-fields.adoc[]
+
+== Invalid Company Location and Purpose No data found
+
+.request body
+include::{snippets}/getByCompanyLocationAndCompanyPurposeTest_Invalid_Input/http-request.adoc[]
+
+.response body
+include::{snippets}/getByCompanyLocationAndCompanyPurposeTest_Invalid_Input/http-response.adoc[]
+
+.response Fields
+include::{snippets}/getByCompanyLocationAndCompanyPurposeTest_Invalid_Input/response-fields.adoc[]

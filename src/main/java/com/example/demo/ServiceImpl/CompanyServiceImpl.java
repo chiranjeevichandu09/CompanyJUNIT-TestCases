@@ -3,13 +3,16 @@
 import java.lang.System.Logger;
 import java.util.List;
 
+import com.example.demo.ExceptionHandling.CompanyNotFoundException;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.demo.Entity.Company;
 import com.example.demo.Repository.companyRepository;
 import com.example.demo.Service.CompanyService;
+import org.springframework.stereotype.Service;
 
+   @Service
 public class CompanyServiceImpl implements CompanyService {
 
 	@Autowired
@@ -23,11 +26,11 @@ public class CompanyServiceImpl implements CompanyService {
 		return com;
 	}
 
-	@Override
-	public Company getByCompanyName(String companyName) {
-		Company com=companyRepo.findByCompanyName(companyName);
-		return com;
-	}
+	   @Override
+	   public Company getByCompanyName(String companyName) {
+		   Company com = companyRepo.findByCompanyName(companyName);
+		   return com;
+	   }
 
 	@Override
 	public List<Company> getByCompanyLocation(String companyLocation) {

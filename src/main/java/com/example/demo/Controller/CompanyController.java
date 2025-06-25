@@ -2,9 +2,11 @@ package com.example.demo.Controller;
 
 import java.util.List;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,13 +17,14 @@ import com.example.demo.Entity.Company;
 import com.example.demo.ServiceImpl.CompanyServiceImpl;
 
 @RestController
+@Validated
 public class CompanyController {
 	@Autowired
 	public CompanyServiceImpl companySer;
 	
 	
 	@PostMapping("/save")
-	public ResponseEntity<Company> saveCompany(@RequestBody Company com)
+	public ResponseEntity<Company> saveCompany( @Valid  @RequestBody Company com)
 	{
 		Company c=companySer.SaveCompany(com);
 		return new ResponseEntity<Company>(c,HttpStatus.CREATED);
@@ -31,6 +34,7 @@ public class CompanyController {
 	public ResponseEntity<Company> getByCompanyName(@PathVariable String companyName)
 	{
 		Company com=companySer.getByCompanyName( companyName);
+
 		return ResponseEntity.ok(com);
 	}
 	

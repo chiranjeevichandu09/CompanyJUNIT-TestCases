@@ -3,7 +3,9 @@ package com.example.demo.Service;
 import java.util.List;
 
 import com.example.demo.Entity.Company;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface CompanyService {
 	
 	public Company SaveCompany(Company c);
